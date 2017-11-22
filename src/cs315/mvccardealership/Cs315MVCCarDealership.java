@@ -2,7 +2,7 @@
  * file: CS315MVCCarDealership.java
  * 
  *  (c)2017 by Arthur Manning atmanning@dbq.edu
- *  
+ *    attempting to update github with changes...
  * 
  */
 
