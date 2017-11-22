@@ -6,7 +6,8 @@
  *    modified by atmanning on a different pc
  *      to update to remote project:
  *      commit the changes /team\..commit...
- *        /team\..git-remote-push
+ *        /team\..remote->push
+ *   pull is the same as fetch and then a merge
  * 
  */
 
