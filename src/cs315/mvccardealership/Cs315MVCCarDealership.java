@@ -8,7 +8,7 @@
  *      commit the changes /team\..commit...
  *        /team\..remote->push
  *   pull is the same as fetch and then a merge
- * 
+ *   success at clone process 11/17 by atm
  */
 
 package cs315.mvccardealership;
