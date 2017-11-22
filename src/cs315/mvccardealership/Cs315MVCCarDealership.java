@@ -3,6 +3,8 @@
  * 
  *  (c)2017 by Arthur Manning atmanning@dbq.edu
  *    attempting to update github with changes...
+ *    modified by atmanning on a different pc
+ *      then rclick-git-remote-push
  * 
  */
 
