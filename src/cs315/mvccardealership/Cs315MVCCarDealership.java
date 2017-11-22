@@ -1,7 +1,7 @@
 /*
- * file: Tools | Templates | Licenses | Default License
+ * file: CS315MVCCarDealership.java
  * 
- *  (c)2017 by Arthur Manning arthur.manning@gmail.com
+ *  (c)2017 by Arthur Manning atmanning@dbq.edu
  *  
  * 
  */
