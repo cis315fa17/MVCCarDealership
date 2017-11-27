@@ -4,7 +4,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
-
+/*
+@author kristjahnSaliga
+@author katieHansen
+*/
 public class CarDealershipModel {
 
     int lastServiceID;
@@ -87,19 +90,19 @@ public class CarDealershipModel {
 
     }
 
-    public ModelCustomer searchForCustomerByID(int customerID) {
+    public ModelCustomer searchForCustomerByaphone(String customerPhone) {
         ModelCustomer returnCustomer = null;
 
         for (ModelCustomer c : Customers) {
-            int currentCustomerID = c.getCustomerID();
-            if (currentCustomerID == customerID) {
+            String currentCustomerPhone = c.getstrPhoneNumber();
+            if (currentCustomerPhone == customerPhone) {
                 returnCustomer = c;
             }
             return c;
         }
 
         if (returnCustomer == null) {
-            System.out.println("Customer with that customer ID does not exist");
+            System.out.println("Customer with that phone number does not exist");
         }
 
         return returnCustomer;
