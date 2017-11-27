@@ -7,6 +7,9 @@ import java.util.Date;
 /*
 @author kristjahnSaliga
 @author katieHansen
+
+reviewed by atm 11/27 -- needs comments 
+  add links to your google docs if they are helpful
 */
 public class CarDealershipModel {
 
