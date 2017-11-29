@@ -31,14 +31,17 @@ public class View extends javax.swing.JFrame {
     public View() {
         initComponents();
         
+        
+        // atm 11/28 - one way to validate customer information
         // build a list of customer info textfields
         // to be validated whenever one is changed
         aListCustomerInfo.add( this.phoneEntry);
         aListCustomerInfo.add( this.nameEntry);
         aListCustomerInfo.add(this.addressEntry);
         
-        // now register the keyrealeased event for each
-        // this code copied from auto-generated code
+        
+        // this code registers the keyrealeased event for each
+        // this code was copied from auto-generated code for the keypressed event
         for( JTextField jt : aListCustomerInfo )
             jt.addKeyListener( new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -48,17 +51,22 @@ public class View extends javax.swing.JFrame {
         
     }
     
+    
+    // validate the customer information entered
+
     void customerValidate() {
         jButton2.setEnabled(validCustomer());
     }
     
+    // return true if the customer information looks good
+    // current version just checks for non-blank text ( 0 < length() 
     boolean validCustomer() {
         System.out.println("validCustomer()...");
         boolean result = true;
         for( JTextField jtext : aListCustomerInfo ) {
             System.out.println("txt:" + jtext.getText());
             
-            if( jtext.getText().length() == 0 )
+            if( 0 == jtext.getText().length() )
                return false;
         }
         return true;
