@@ -69,6 +69,16 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
         customerValidate();
     } 
+    
+    // ************************************************
+    // register the action for the new account button
+    // this action code should be in the controller
+    // the controller calls this function
+    public void registerNewAccountButtonAction( java.awt.event.ActionListener action ) {
+        jButton2.addActionListener(action);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
