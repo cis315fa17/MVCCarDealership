@@ -1,6 +1,7 @@
 package cs315.mvccardealership;
 
 import java.util.ArrayList;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,14 +21,54 @@ public class View extends javax.swing.JFrame {
     String VID = " ";
     String VType = " ";
     String miles = " ";
+    
+    ArrayList<JTextField> aListCustomerInfo
+     = new ArrayList<>();
 
     /**
      * Creates new form View
      */
     public View() {
         initComponents();
+        
+        // build a list of customer info textfields
+        // to be validated whenever one is changed
+        aListCustomerInfo.add( this.phoneEntry);
+        aListCustomerInfo.add( this.nameEntry);
+        aListCustomerInfo.add(this.addressEntry);
+        
+        // now register the keyrealeased event for each
+        // this code copied from auto-generated code
+        for( JTextField jt : aListCustomerInfo )
+            jt.addKeyListener( new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldKeyReleased(evt);
+            }
+        });
+        
+    }
+    
+    void customerValidate() {
+        jButton2.setEnabled(validCustomer());
+    }
+    
+    boolean validCustomer() {
+        System.out.println("validCustomer()...");
+        boolean result = true;
+        for( JTextField jtext : aListCustomerInfo ) {
+            System.out.println("txt:" + jtext.getText());
+            
+            if( jtext.getText().length() == 0 )
+               return false;
+        }
+        return true;
     }
 
+    // this keyListener gets registered withe every customer field
+    private void jTextFieldKeyReleased(java.awt.event.KeyEvent evt) {                                         
+        // TODO add your handling code here:
+        customerValidate();
+    } 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -87,9 +128,16 @@ public class View extends javax.swing.JFrame {
         jLabel1.setText("Phone");
 
         jButton2.setText("New Account");
+        jButton2.setEnabled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        addressEntry.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                addressEntryKeyReleased(evt);
             }
         });
 
@@ -287,7 +335,7 @@ public class View extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         //Search criteria
-
+        this.jButton2.setEnabled(this.validCustomer());
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -311,7 +359,13 @@ public class View extends javax.swing.JFrame {
         miles = milesEntry.getText();
         milesEntry.setText("");
 
+        customerValidate();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void addressEntryKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addressEntryKeyReleased
+        // TODO add your handling code here:
+        customerValidate();
+    }//GEN-LAST:event_addressEntryKeyReleased
 
     /**
      * @param args the command line arguments
