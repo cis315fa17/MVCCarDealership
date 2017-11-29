@@ -192,5 +192,22 @@ public class CarDealershipModel {
         return returnArray;
 
     }
+    
+    public ArrayList<ModelServiceSchedule> getAllOfServicePerformed(String service) {
+        ArrayList<ModelServiceSchedule> returnArray = null;
+
+        String servicePerform = " ";
+        for (ModelServiceSchedule s : ServiceSchedules) {
+	servicePerform = s.getServicePerformed();
+             if(servicePerform == service)
+                returnArray.add(s);
+
+          }
+                if(returnArray == null)
+                System.out.println("No services of that type were performed");
+                return returnArray;
+    }
+
+
 
 }
