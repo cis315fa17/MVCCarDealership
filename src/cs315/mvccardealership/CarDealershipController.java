@@ -15,7 +15,7 @@ public class CarDealershipController {
     CarDealershipModel myModel;
     CarDealershipController myController;
 
-    // constructor
+    // constructor - called from project main()
     CarDealershipController(View v, CarDealershipModel m) {
 
         myView = v;
@@ -26,6 +26,9 @@ public class CarDealershipController {
 
     }
 
+    
+    // this code is set to run when the [New Account] button is pressed
+    //
     class actionNewAccount implements java.awt.event.ActionListener {
 
         @Override
