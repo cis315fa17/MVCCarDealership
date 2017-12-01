@@ -20,7 +20,9 @@ public class CarDealershipController {
 
         myView = v;
 
-        myView.setNewAccountActionListener(new actionNewAccount());
+        // because of the way Netbeans attaches events to buttons, this action happens before
+        // the 'normal' button action
+        myView.registerNewAccountButtonAction(new actionNewAccount());
 
         myModel = m;
 
