@@ -1,49 +1,62 @@
 package cs315.mvccardealership;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
  * @author krist
  */
-public class ModelServiceList {
-
+public class ModelServiceList
+{
     private String strServiceName;
     private String strDescription;
     private double dblServiceMileage;
     private int intServiceTypeID;
-
+    
     ModelServiceList(String addServiceName, String addDescription,
-            double addServiceMileage, int addServiceTypeID) {
+            double addServiceMileage, int addServiceTypeID)
+    {
         strServiceName = addServiceName;
         strDescription = addDescription;
         dblServiceMileage = addServiceMileage;
         intServiceTypeID = addServiceTypeID;
     }
-
-    private void setServiceName(String setServiceName) {
+    
+    public void setServiceName(String setServiceName)
+    {
         strServiceName = setServiceName;
     }
-
-    private void setDescription(String setDescription) {
+    
+    public void setDescription(String setDescription)
+    {
         strDescription = setDescription;
     }
-
-    private void setServiceMileage(double setServiceMileage) {
+        
+    public void setServiceMileage(double setServiceMileage)
+    {
         dblServiceMileage = setServiceMileage;
     }
-
-    private int getServiceTypeID() {
+    
+    public int getServiceTypeID()
+    {
         return intServiceTypeID;
     }
-
-    private String getServiceName() {
+    
+    public String getServiceName()
+    {
         return strServiceName;
     }
-
-    private String getDescription() {
+    
+    public String getDescription()
+    {
         return strDescription;
     }
-
-    private double getServiceMileage() {
+    
+    public double getServiceMileage()
+    {
         return dblServiceMileage;
     }
 }

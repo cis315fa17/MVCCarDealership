@@ -1,11 +1,16 @@
 package cs315.mvccardealership;
-
 /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
  *
  * @author krist
  */
-public class ModelCustomer {
-
+public class ModelCustomer
+{
     private String strFirstName;
     private String strLastName;
     private String strAddressNumber;
@@ -18,82 +23,100 @@ public class ModelCustomer {
 
     ModelCustomer(String addFirstName, String addLastName,
             String addAddressNumber, String addStreetName, String addCity,
-            String addState, String addZip, String addPhoneNumber, int addCustomerID) {
-        strFirstName = addFirstName;
-        strLastName = addLastName;
-        strAddressNumber = addAddressNumber;
-        strStreetName = addStreetName;
-        strCity = addCity;
-        strState = addState;
-        strZip = addZip;
-        strPhoneNumber = addPhoneNumber;
+            String addState, String addZip, String addPhoneNumber, int addCustomerID)
+    {
+       strFirstName= addFirstName;
+       strLastName= addLastName;
+       strAddressNumber = addAddressNumber;
+       strStreetName = addStreetName;
+       strCity = addCity;
+       strState = addState;
+       strZip = addZip;
+       strPhoneNumber = addPhoneNumber;
     }
-
-    public void setFirstName(String setFirstName) {
+   
+    public void setFirstName(String setFirstName)
+    {
         strFirstName = setFirstName;
     }
-
-    public void setLastName(String setLastName) {
+    
+    public void setLastName(String setLastName)
+    {
         strLastName = setLastName;
     }
-
-    public void setAddressNumber(String setAddressNumber) {
+    
+    public void setAddressNumber(String setAddressNumber)
+    {
         strAddressNumber = setAddressNumber;
-    }
-
-    public void setStreetName(String setStreetName) {
+    }    
+    
+    public void setStreetName(String setStreetName)
+    {
         strStreetName = setStreetName;
-    }
-
-    public void setCity(String setCity) {
+    }    
+    
+    public void setCity(String setCity)
+    {
         strCity = setCity;
-    }
-
-    public void setState(String setState) {
+    }        
+    
+    public void setState(String setState)
+    {
         strState = setState;
-    }
-
-    public void setZip(String setZip) {
+    }     
+    
+    public void setZip(String setZip)
+    {
         strZip = setZip;
     }
 
-    public void setPhoneNumber(String setPhoneNumber) {
+    public void setPhoneNumber(String setPhoneNumber)
+    {
         strPhoneNumber = setPhoneNumber;
-    }
-
-    public String getFirstName() {
+    }    
+     
+    public String getFirstName()
+    {
         return strFirstName;
     }
-
-    public String getLastName() {
-        return strLastName;
+    
+    public String getLastName()
+    {
+        return strLastName; 
     }
 
-    public String getAddressNum() {
+    public String getAddressNum()
+    {
         return strAddressNumber;
     }
 
-    public String getStreet() {
+    public String getStreet()
+    {
         return strStreetName;
-    }
+    }   
 
-    public String getstrCity() {
+    public String getstrCity()
+    {
         return strCity;
-    }
+    }    
 
-    public String getstrState() {
+    public String getstrState()
+    {
         return strState;
     }
 
-    public String getstrZip() {
+    public String getstrZip()
+    {
         return strZip;
     }
 
-    public String getstrPhoneNumber() {
+    public String getstrPhoneNumber()
+    {
         return strPhoneNumber;
     }
-
-    public int getCustomerID() {
+    
+    public int getCustomerID()
+    {
         return intCustomerID;
     }
 }
