@@ -6,13 +6,8 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author atmanning
+ *In order to avoid problems with accessing dynamic variables from static main, 
+ * this controller class can now be used to control the view events and interact with the mode;
  */
 public class CarDealershipController {
 
