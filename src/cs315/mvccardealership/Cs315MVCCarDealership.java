@@ -10,7 +10,6 @@
  *   pull is the same as fetch and then a merge
  *   success at clone process 11/17 by atm - arthurmanning 11/28 +1
  */
-
 package cs315.mvccardealership;
 
 import java.awt.event.ActionEvent;
@@ -23,13 +22,8 @@ import java.util.Date;
  *
  * @author amanning
  */
-public class Cs315MVCCarDealership implements java.awt.event.ActionListener{
-CarDealershipModel myModel;
-View myView;
- public void actionPerformed(ActionEvent e){
-        v.registerNewAccountButtonAction((ActionListener) e);
-        System.out.println(e.toString());
-  
+public class Cs315MVCCarDealership {
+
     public static void main(String[] args) {
 //make a model classs
         CarDealershipModel myModel = new CarDealershipModel();
@@ -38,9 +32,12 @@ View myView;
 //feed to the controller class
         View myView = new View();
 
+        CarDealershipController myController = new CarDealershipController(myView, myModel);
+
 //set the window to visible
         myView.setVisible(true);
     }
+
 }
 
 /**
@@ -88,16 +85,4 @@ class ControllerFunctions {
         return (int) ((((diff / 1000) / 60) / 60) / 24);
     }
 
-}
-class actionNewAccount{
-
- public void actionPreformed(java.awt.event.ActionEvent evt){
-     ArrayList<String> currentCustomer = v.getNewCustomerInfo();
-     
-     
-     
-     //String addFirstName, String addLastName,
-            //String addAddressNumber, String addStreetName, String addCity,
-            //String addState, String addZip, String addPhoneNumber)
-}
 }
