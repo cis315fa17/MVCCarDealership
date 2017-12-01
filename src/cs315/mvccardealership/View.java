@@ -1,6 +1,9 @@
 package cs315.mvccardealership;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.EventListener;
 import javax.swing.JTextField;
 
 /*
@@ -40,7 +43,7 @@ public class View extends javax.swing.JFrame {
         aListCustomerInfo.add(this.addressEntry);
         
         
-        // this code registers the keyrealeased event for each
+        // this code registers the keyrealeased event for each customer textfield
         // this code was copied from auto-generated code for the keypressed event
         for( JTextField jt : aListCustomerInfo )
             jt.addKeyListener( new java.awt.event.KeyAdapter() {
@@ -51,6 +54,7 @@ public class View extends javax.swing.JFrame {
         
     }
     
+
     
     // validate the customer information entered
 
@@ -75,6 +79,9 @@ public class View extends javax.swing.JFrame {
     // this keyListener gets registered withe every customer field
     private void jTextFieldKeyReleased(java.awt.event.KeyEvent evt) {                                         
         // TODO add your handling code here:
+        
+        
+        
         customerValidate();
     } 
     
@@ -84,6 +91,7 @@ public class View extends javax.swing.JFrame {
     // the controller calls this function
     public void registerNewAccountButtonAction( java.awt.event.ActionListener action ) {
         jButton2.addActionListener(action);
+        jButton2.addActionListener( new jButton2ActionListener() );
     }
     
     
@@ -147,11 +155,6 @@ public class View extends javax.swing.JFrame {
 
         jButton2.setText("New Account");
         jButton2.setEnabled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         addressEntry.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -351,34 +354,16 @@ public class View extends javax.swing.JFrame {
         //
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
+        private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+      
+
+    }  
+    
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         //Search criteria
         this.jButton2.setEnabled(this.validCustomer());
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // retrieves the information to create a new customer 
-        // clears textfields
-        name = nameEntry.getText();
-        nameEntry.setText("");
-
-        phone = phoneEntry.getText();
-        phoneEntry.setText("");
-
-        address = addressEntry.getText();
-        addressEntry.setText("");
-
-        VID = vIDEntry.getText();
-        vIDEntry.setText("");
-
-        VType = vTypeEntry.getText();
-        vTypeEntry.setText("");
-
-        miles = milesEntry.getText();
-        milesEntry.setText("");
-
-        customerValidate();
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void addressEntryKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addressEntryKeyReleased
         // TODO add your handling code here:
@@ -420,5 +405,43 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JTextField vIDEntry;
     private javax.swing.JTextField vTypeEntry;
     // End of variables declaration//GEN-END:variables
+
+
+
+
+class jButton2ActionListener implements ActionListener {
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+               System.out.println("jButton2Action!");
+
+// retrieves the information to create a new customer 
+        // clears textfields
+        name = nameEntry.getText();
+        //nameEntry.setText("");
+
+        phone = phoneEntry.getText();
+        //phoneEntry.setText("");
+
+        address = addressEntry.getText();
+        addressEntry.setText("");
+
+        VID = vIDEntry.getText();
+        vIDEntry.setText("");
+
+        VType = vTypeEntry.getText();
+        vTypeEntry.setText("");
+
+        miles = milesEntry.getText();
+        milesEntry.setText("");
+
+        customerValidate(); 
+        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}
+
 
 }
