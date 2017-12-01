@@ -198,14 +198,16 @@ public class CarDealershipModel {
 
         String servicePerform = " ";
         for (ModelServiceSchedule s : ServiceSchedules) {
-	servicePerform = s.getServicePerformed();
-             if(servicePerform == service)
+            servicePerform = s.getServicePerformed();
+            if (servicePerform == service) {
                 returnArray.add(s);
+            }
 
-          }
-                if(returnArray == null)
-                System.out.println("No services of that type were performed");
-                return returnArray;
+        }
+        if (returnArray == null) {
+            System.out.println("No services of that type were performed");
+        }
+        return returnArray;
     }
 
 
