@@ -16,6 +16,8 @@ public class ModelServiceList
     private double dblServiceMileage;
     private int intServiceTypeID;
     
+    
+    //constructor that takes in all variables
     ModelServiceList(String addServiceName, String addDescription,
             double addServiceMileage, int addServiceTypeID)
     {
@@ -25,6 +27,8 @@ public class ModelServiceList
         intServiceTypeID = addServiceTypeID;
     }
     
+    
+    //setter methods for all variables except serviceTypeID
     public void setServiceName(String setServiceName)
     {
         strServiceName = setServiceName;
@@ -40,6 +44,8 @@ public class ModelServiceList
         dblServiceMileage = setServiceMileage;
     }
     
+    
+    //getter methods for all variables
     public int getServiceTypeID()
     {
         return intServiceTypeID;

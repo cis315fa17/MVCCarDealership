@@ -11,6 +11,8 @@ package cs315.mvccardealership;
  */
 public class ModelCustomer
 {
+    
+    //string variables 
     private String strFirstName;
     private String strLastName;
     private String strAddressNumber;
@@ -19,8 +21,11 @@ public class ModelCustomer
     private String strState;
     private String strZip;
     private String strPhoneNumber;
+    
+    //int variable
     private int intCustomerID;
 
+    //constructor that takes in all variables
     ModelCustomer(String addFirstName, String addLastName,
             String addAddressNumber, String addStreetName, String addCity,
             String addState, String addZip, String addPhoneNumber, int addCustomerID)
@@ -35,6 +40,8 @@ public class ModelCustomer
        strPhoneNumber = addPhoneNumber;
     }
    
+    
+    //setter methods for all variables except customerID
     public void setFirstName(String setFirstName)
     {
         strFirstName = setFirstName;
@@ -75,6 +82,8 @@ public class ModelCustomer
         strPhoneNumber = setPhoneNumber;
     }    
      
+    
+    //getter methods for all variables
     public String getFirstName()
     {
         return strFirstName;

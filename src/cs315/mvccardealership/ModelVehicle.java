@@ -18,6 +18,8 @@ public class ModelVehicle
     private int intCustomerID;
     private int intVehicleID;
  
+    
+    //constructor that takes in all variables
     public ModelVehicle(String addType, String addMake, String addModel,
         String addYear, int addCustomerID, int addVehicleID)
     {
@@ -29,6 +31,8 @@ public class ModelVehicle
         intVehicleID = addVehicleID;
     }
      
+    
+    //setter methods for all variables customerID and vehicleID
     public void setType(String setType)
     {
         strType = setType;
@@ -49,6 +53,8 @@ public class ModelVehicle
         strYear = setYear;
     }    
     
+    
+    //getter methods for all variables
     public String getType()
     {
         return strType; 

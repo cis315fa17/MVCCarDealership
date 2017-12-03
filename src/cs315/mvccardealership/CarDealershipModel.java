@@ -28,11 +28,15 @@ public class CarDealershipModel
     int lastVehicleID;
     int lastServiceListID;
 
+    //creates arraylist of the other model classes
     ArrayList<ModelCustomer> Customers = new ArrayList<ModelCustomer>();
     ArrayList<ModelVehicle> Vehicles = new ArrayList<ModelVehicle>();
     ArrayList<ModelServiceSchedule> ServiceSchedules = new  ArrayList<ModelServiceSchedule>();
     ArrayList<ModelServiceList> ServiceLists = new ArrayList<ModelServiceList>();
 
+    
+    //method adds a new customer to the customers arrayList- takes in all customer variables except customerID which is generated
+    
     public void addCustomer(String addFirstName, String addLastName,
         String addAddressNumber, String addStreetName, String addCity,
         String addState, String addZip, String addPhoneNumber)
@@ -42,7 +46,9 @@ public class CarDealershipModel
                 addAddressNumber, addStreetName, addCity, addState, addZip,
                 addPhoneNumber, lastCustomerID));
     }
-
+    
+    
+    //method adds a new vehicle to the vehicle arrayList- takes in all variables except vehicleID which is generated
     public void addVehicle(String addType, String addMake, String addModel,
     String addYear, int addCustomerID)
     {
@@ -51,6 +57,9 @@ public class CarDealershipModel
                 addYear, addCustomerID, lastVehicleID));
     }
 
+    
+    //method adds a new service schedule to the serviceSchedule arrayList- takes in all varaibles except ID which id generarted
+    
     public void addModelServiceSchedule(double addMileage, String addServicePerformed,
         Date addNextServiceDue, Date addDateOfService,
         int addVehicleID, int addServiceListID)
@@ -61,6 +70,8 @@ public class CarDealershipModel
                 addDateOfService, addVehicleID, lastServiceID, addServiceListID));
     }
     
+    
+    //method adds a new serviceList to the serviceList arrayList- takes in all variables except ID which is generated
     public void addModelServiceList(String addServiceName, String addDescription,
             double addServiceMileage)
     {
@@ -68,6 +79,9 @@ public class CarDealershipModel
         ServiceLists.add(new ModelServiceList(addServiceName, addDescription,
             addServiceMileage, lastServiceListID));
     }
+    
+    
+    //methods allows users to search for a customer by a customerID number
     public ModelCustomer searchForCustomer(int customerID)
     {
         ModelCustomer returnCustomer = null;
@@ -90,6 +104,8 @@ public class CarDealershipModel
         return returnCustomer;
     }
     
+    
+    //method allows user to search for a vehicle by a vehicle ID number
     public ModelVehicle searchForVehicle(int vehicleID)
     {
         ModelVehicle returnVehicle = null;
@@ -113,53 +129,9 @@ public class CarDealershipModel
     
     }
     
-    public ModelCustomer searchForCustomerByID(int customerID)
-    {
-        ModelCustomer returnCustomer = null;
-
-        for(ModelCustomer c : Customers)
-        {
-            int currentCustomerID = c.getCustomerID();
-            if (currentCustomerID == customerID)
-            {
-                returnCustomer = c;
-                return c;
-            }
-        }
-
-        if(returnCustomer == null)
-        {
-            System.out.println("Customer with that customer ID does not exist");
-        }
-
-        return returnCustomer;
-
-    }
     
-    public ModelVehicle searchForVehicleByID(int vehicleID)
-    {
-        ModelVehicle returnVehicle = null;
-
-        for(ModelVehicle v : Vehicles)
-        {
-            int currentVehicleID = v.getVehicleID();
-            if (currentVehicleID == vehicleID)
-            {
-                returnVehicle = v;
-                return v;
-            }
-        }
-
-        if(returnVehicle == null)
-        {
-            System.out.println("Vehicle with that vehicle ID does not exist");
-        }
-
-        return returnVehicle;
-
-    }
-    
-    public ModelCustomer searchForCustomerByName(String firstName, String lastName)
+    //method allows user to search for a customer by a first and last name
+   public ModelCustomer searchForCustomerByName(String firstName, String lastName)
     {
         ModelCustomer returnCustomer = null;
         for(ModelCustomer c : Customers){
@@ -177,7 +149,9 @@ public class CarDealershipModel
         }
         return returnCustomer;
     }
-
+   
+   
+//method allows users to search for all the vehicles owned by a customer using first and last name
     public ArrayList<ModelVehicle> getAllVehiclesOwned(String firstName, String lastName)
     {
         ArrayList<ModelVehicle> returnArray = null;
@@ -207,6 +181,8 @@ public class CarDealershipModel
         return returnArray;
     }
     
+    
+    //method allows users to search for all the vehicles owned by a customer using a customer ID number
     public ArrayList<ModelVehicle> getAllVehiclesOwnedByID(int customerIDNum)
     {
         ArrayList<ModelVehicle> returnArray = null;
@@ -225,6 +201,8 @@ public class CarDealershipModel
         return returnArray;
     }
     
+    
+    //method allows user to search for all instances of a service performed by service name
     public ArrayList<ModelServiceSchedule> getAllOfServicePerformed(String service) {
         ArrayList<ModelServiceSchedule> returnArray = null;
 
