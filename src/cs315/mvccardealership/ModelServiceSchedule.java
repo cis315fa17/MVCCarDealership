@@ -58,6 +58,8 @@ public class ModelServiceSchedule
         dateDateOfService = setDateOfService;
     }
 
+    
+    //getters
     public double getMileage()
     {
         return dblMileage;
